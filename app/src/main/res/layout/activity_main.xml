@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="AARLibraryExample (Inner package)"
+        android:text="AARLibraryExample (Inner project)"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
