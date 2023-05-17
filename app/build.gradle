@@ -38,9 +38,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    implementation 'com.github.sHong7512:AARLibraryExample:0.0.2'
     //프로젝트 내부 일때 implement
-//    implementation project(path: ':ExampleCal')
+    implementation project(path: ':ExampleCal')
 //     implementation project(":ExampleCal")
 
     testImplementation 'junit:junit:4.13.2'
