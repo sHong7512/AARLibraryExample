@@ -4,22 +4,25 @@ plugins {
     id 'maven-publish'
 }
 
-afterEvaluate {
-    publishing{
-        publications{
-            release(MavenPublication){
-                from components.release
-                groupId = 'com.shong'
-                artifactId = 'examplecal'
-                version = '0.0.1'
-            }
+publishing{
+    publications{
+        release(MavenPublication){
+            groupId = 'com.github.sHong'
+            artifactId = 'AARLibraryExample'
+            version = '0.0.0'
 
-            debug(MavenPublication) {
-                // Applies the component for the debug build variant.
+            afterEvaluate {
+                from components.release
+            }
+        }
+
+        debug(MavenPublication) {
+            groupId = 'com.github.sHong'
+            artifactId = 'AARLibraryExample'
+            version = '0.0.0'
+
+            afterEvaluate {
                 from components.debug
-                groupId = 'com.shong'
-                artifactId = 'examplecal'
-                version = '0.0.1'
             }
         }
     }
@@ -48,6 +51,12 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 }
 
